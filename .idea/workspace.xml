@@ -9,7 +9,7 @@
     <last-search-timestamp>1574268871787</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="641ff324-6294-4a7d-8146-6f7bdff50858" name="Default Changelist" comment="Added TabuSearchAlgorithm">
+    <list default="true" id="641ff324-6294-4a7d-8146-6f7bdff50858" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -19,13 +19,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/c_example_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/c_example_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/e_shiny_selfies_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/e_shiny_selfies_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/TabuClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/TabuClass.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="176">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -468,12 +463,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578763454948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added TabuSearchAlgorithm">
+      <created>1578769868378</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578769868378</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26332796" />
@@ -738,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="176">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

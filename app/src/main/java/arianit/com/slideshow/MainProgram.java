@@ -2,6 +2,9 @@ package arianit.com.slideshow;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static arianit.com.slideshow.Paths.PATH_B;
 import static arianit.com.slideshow.Paths.PATH_B_OUTPUT;
@@ -18,14 +21,16 @@ public class MainProgram {
 
         SlideShow slideShow = new SlideShow(PATH_C,8);
 
-        System.out.println("Start time:" + printTime());
+        System.out.println("----------------------------");
+        System.out.println("StartTime: " + time());
         System.out.println("StartScore: " + slideShow.Score);
 
         slideShow.TabuSearchAlgorithm(2000000);
 
+        System.out.println("----------------------------");
         System.out.println("BestScore: " + slideShow.Score);
-        System.out.println("End time:" + printTime());
-        Output(slideShow);
+        System.out.println("EndTime: " + time());
+//        Output(slideShow);
 
     }
 
@@ -39,10 +44,11 @@ public class MainProgram {
         System.out.println("Initial fitness: " + slideShow.Score);
     }
 
-    public static Timestamp printTime(){
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        return timestamp;
-
+    public static String time(){
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss a");
+        Date date = new Date();
+        String time=dateFormat.format(date);
+        return time;
     }
 
 

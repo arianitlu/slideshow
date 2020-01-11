@@ -12,10 +12,10 @@ public class TabuClass {
     }
 
     public static void insertElementInTabuList(Photo photo){
+        if(TabuList.size() >= 20){
+            TabuList.remove(0);
+        }
         TabuList.add(photo.id);
-        Time = Time + 1;
-        if(Time > 10)
-            resetTabuList();
     }
 
     public static boolean isElementInTabuList(Photo photo){

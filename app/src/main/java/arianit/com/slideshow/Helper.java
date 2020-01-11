@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -93,6 +94,7 @@ public class Helper {
             return new ArrayList<>();
         }
 
+
         List<Photo> listOfPhotos = new ArrayList<>();
         int ActualScore = 0;
         int Tmp = 99;
@@ -100,7 +102,7 @@ public class Helper {
         for(int i = 0; i<vertical.size()-1;i++){
             if(vertical.get(i).gone)
                 continue;
-            for(int j = i+1; j<vertical.size();j++){
+            for(int j = vertical.size()-1; j>i;j--){
                 if(vertical.get(j).gone)
                     continue;
 
@@ -116,7 +118,7 @@ public class Helper {
                         BestPosition = j;
                     }
                 }
-                if(j == vertical.size()-1){
+                if(j == i-1){
                     vertical.get(i).gone = true;
                     vertical.get(j).gone = true;
                     listOfPhotos.add(combineTwoPhotos( vertical.get(i), vertical.get(BestPosition)));
@@ -139,4 +141,11 @@ public class Helper {
         return listOfPhotos;
     }
 
+}
+
+class CustomComperator implements Comparator<Photo>{
+        @Override
+        public int compare(Photo photo, Photo t1) {
+            return  photo.numberOfTags - t1.numberOfTags;
+        }
 }

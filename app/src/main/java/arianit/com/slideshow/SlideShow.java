@@ -74,11 +74,12 @@ public class SlideShow {
             if(photo.type == 'H')
                 listOfHorizontalPhotos.add(photo);
         }
-
+        Collections.sort(listOfHorizontalPhotos,new CustomComperator());
         for (Photo photo : photos) {
             if(photo.type == 'V')
                 listOfVerticalPhotos.add(photo);
         }
+        Collections.sort(listOfVerticalPhotos,new CustomComperator());
 
         // Combine all horizontal with vertical
         listOfHorizontalPhotos.addAll(Helper.combineVerticalPhotos(listOfVerticalPhotos));
@@ -233,19 +234,31 @@ public class SlideShow {
 
 //            if (i % 2 == 0){
                 int tmpSolutionScore = this.SwapOperator(this,x,y);
-                if(tmpSolutionScore >= 0){
-                    this.Score = this.Score + tmpSolutionScore;
-                    Photo tmpPhotox = new Photo();
-                    tmpPhotox.Set(this.PhotoList.get(x));
-                    this.PhotoList.get(x).Set(this.PhotoList.get(y));
-                    this.PhotoList.get(y).Set(tmpPhotox);
-                    System.out.println("Score:" + this.Score);
-
-                    //if(!TabuClass.isElementInTabuList(this.PhotoList.get(x))){
-                    //    this.SetActualSolution(tmpSolution);
-                    //    TabuClass.insertElementInTabuList(this.PhotoList.get(x));
-                    //}
+                if(!TabuClass.isElementInTabuList(this.PhotoList.get(x))){
+                    if(tmpSolutionScore >= 0){
+                        this.Score = this.Score + tmpSolutionScore;
+                        Photo tmpPhotox = new Photo();
+                        tmpPhotox.Set(this.PhotoList.get(x));
+                        this.PhotoList.get(x).Set(this.PhotoList.get(y));
+                        this.PhotoList.get(y).Set(tmpPhotox);
+                        int toGetTabu = random.nextInt(10);
+                        TabuClass.insertElementInTabuList(this.PhotoList.get(x));
+                    }
+                }else{
+                    int n = random.nextInt(10);
+                    if(n == 1){
+                        if(tmpSolutionScore >= 0){
+                            this.Score = this.Score + tmpSolutionScore;
+                            Photo tmpPhotox = new Photo();
+                            tmpPhotox.Set(this.PhotoList.get(x));
+                            this.PhotoList.get(x).Set(this.PhotoList.get(y));
+                            this.PhotoList.get(y).Set(tmpPhotox);
+                            int toGetTabu = random.nextInt(10);
+                            TabuClass.insertElementInTabuList(this.PhotoList.get(x));
+                        }
+                    }
                 }
+
 //            }
 
 //            else if (i % 100 == 1){

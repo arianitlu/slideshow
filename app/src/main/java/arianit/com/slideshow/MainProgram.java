@@ -1,6 +1,7 @@
 package arianit.com.slideshow;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 
 import static arianit.com.slideshow.Paths.PATH_B;
 import static arianit.com.slideshow.Paths.PATH_B_OUTPUT;
@@ -15,26 +16,33 @@ public class MainProgram {
 
     public static void main(String[] args) throws IOException {
 
-        SlideShow slideShow = new SlideShow(PATH_D,6);
+        SlideShow slideShow = new SlideShow(PATH_C,8);
 
+        System.out.println("Start time:" + printTime());
         System.out.println("StartScore: " + slideShow.Score);
 
-        slideShow.TabuSearchAlgorithm(20000);
+        slideShow.TabuSearchAlgorithm(2000000);
 
         System.out.println("BestScore: " + slideShow.Score);
-        //asdasd
+        System.out.println("End time:" + printTime());
         Output(slideShow);
 
     }
 
     public static void Output(SlideShow slideShow){
         try {
-            IO.writeToFile(PATH_D_OUTPUT, slideShow.PhotoList);
+            IO.writeToFile(PATH_C_OUTPUT, slideShow.PhotoList);
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("Output file successfully created");
         System.out.println("Initial fitness: " + slideShow.Score);
+    }
+
+    public static Timestamp printTime(){
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        return timestamp;
+
     }
 
 

@@ -1,7 +1,14 @@
 package arianit.com.slideshow;
+import android.transition.Slide;
 
-import android.content.SyncStatusObserver;
-
+import static arianit.com.slideshow.Paths.PATH_B;
+import static arianit.com.slideshow.Paths.PATH_B_OUTPUT;
+import static arianit.com.slideshow.Paths.PATH_C;
+import static arianit.com.slideshow.Paths.PATH_C_OUTPUT;
+import static arianit.com.slideshow.Paths.PATH_D;
+import static arianit.com.slideshow.Paths.PATH_D_OUTPUT;
+import static arianit.com.slideshow.Paths.PATH_E;
+import static arianit.com.slideshow.Paths.PATH_E_OUTPUT;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,56 +20,67 @@ public class SlideShow {
     public List<Photo> PhotoList = new ArrayList<Photo>();
     public String Path = "";
     public int Score = 0;
-
+    public int tmp_value = 0;
     public SlideShow(){
 
     }
-    public SlideShow(String _path, int maxScore) throws IOException{
+    public SlideShow(String _path) throws IOException{
         this.Path = _path;
-        this.InitiateSolutionAdvanced(maxScore);
-        //this.InitiateSolution();
+        //this.set_tmp_value(_path);
+        //this.InitiateSolutionAdvanced();
+        this.InitiateSolution();
     }
-//
-//    private void InitiateSolution() throws IOException {
-//        Scanner scanner = IO.createScaner(this.Path);
-//        List<Photo> photos = Helper.createPhotos(scanner);
-//
-//        // Seperate photos whether are horizontal or vertical
-//        ArrayList<Photo> listOfHorizontalPhotos = new ArrayList<>();
-//        ArrayList<Photo> listOfVerticalPhotos = new ArrayList<>();
-//
-//        for (Photo photo : photos) {
-//            if(photo.type == 'H')
-//                listOfHorizontalPhotos.add(photo);
-//        }
-//
-//        for (Photo photo : photos) {
-//            if(photo.type == 'V')
-//                listOfVerticalPhotos.add(photo);
-//        }
-//
-//        // Combine all horizontal with vertical
-//        listOfHorizontalPhotos.addAll(Helper.combineVerticalPhotos(listOfVerticalPhotos));
-//        Collections.shuffle(listOfHorizontalPhotos);
-//
-//
-//        Photo current = photos.get(0);
-//        current.gone = true;
-//        this.PhotoList.add(current);
-//
-//        while (this.PhotoList.size() < listOfHorizontalPhotos.size()) {
-//            for (Photo photo : listOfHorizontalPhotos) {
-//                if (!photo.gone) {
-//                    this.PhotoList.add(photo);
-//                    photo.gone = true;
-//                    break;
-//                }
-//            }
-//        }
-//        this.Score = this.CalculateScore(this.PhotoList);
-//    }
 
-    private void InitiateSolutionAdvanced(int _maxScore) throws IOException {
+    private void set_tmp_value(String path){
+        if(path.equals(PATH_B))
+            this.tmp_value = 1;
+        else if(path.equals(PATH_C))
+            this.tmp_value = 10;
+        else if(path.equals(PATH_D))
+            this.tmp_value = 6;
+        else
+            this.tmp_value = 8;
+    }
+
+    private void InitiateSolution() throws IOException {
+        Scanner scanner = IO.createScaner(this.Path);
+        List<Photo> photos = Helper.createPhotos(scanner);
+
+        // Seperate photos whether are horizontal or vertical
+        ArrayList<Photo> listOfHorizontalPhotos = new ArrayList<>();
+        ArrayList<Photo> listOfVerticalPhotos = new ArrayList<>();
+
+        for (Photo photo : photos) {
+            if(photo.type == 'H')
+                listOfHorizontalPhotos.add(photo);
+        }
+
+        for (Photo photo : photos) {
+            if(photo.type == 'V')
+                listOfVerticalPhotos.add(photo);
+        }
+
+        // Combine all horizontal with vertical
+        listOfHorizontalPhotos.addAll(Helper.combineVerticalPhotos(listOfVerticalPhotos));
+        Collections.shuffle(listOfHorizontalPhotos);
+
+        Photo current = photos.get(0);
+        current.gone = true;
+        this.PhotoList.add(current);
+
+        while (this.PhotoList.size() < listOfHorizontalPhotos.size()) {
+            for (Photo photo : listOfHorizontalPhotos) {
+                if (!photo.gone) {
+                    this.PhotoList.add(photo);
+                    photo.gone = true;
+                    break;
+                }
+            }
+        }
+        this.Score = this.CalculateScore(this.PhotoList);
+    }
+
+    private void InitiateSolutionAdvanced() throws IOException {
         Scanner scanner = IO.createScaner(this.Path);
         List<Photo> photos = Helper.createPhotos(scanner);
 
@@ -75,6 +93,7 @@ public class SlideShow {
                 listOfHorizontalPhotos.add(photo);
         }
         Collections.sort(listOfHorizontalPhotos,new CustomComperator());
+
         for (Photo photo : photos) {
             if(photo.type == 'V')
                 listOfVerticalPhotos.add(photo);
@@ -84,32 +103,35 @@ public class SlideShow {
         // Combine all horizontal with vertical
         listOfHorizontalPhotos.addAll(Helper.combineVerticalPhotos(listOfVerticalPhotos));
         Collections.shuffle(listOfHorizontalPhotos);
-        Photo current = photos.get(0);
-        current.gone = true;
-        this.PhotoList.add(current);
 
-        int maxScore = _maxScore;
+        this.PostProcessSlideShow(listOfHorizontalPhotos);
 
-        while (this.PhotoList.size() < listOfHorizontalPhotos.size()) {
-            boolean found = false;
-            for (Photo photo : listOfHorizontalPhotos) {
-                if (!photo.gone) {
-                    int score = Helper.calculateScoring(current, photo);
-                    if (score >= maxScore) {
-                        this.PhotoList.add(photo);
-                        current = photo;
-                        found = true;
-                        photo.gone = true;
-                        break;
-                    }
-                }
-            }
-            if (!found) {
-                maxScore--;
-            }
-        }
         this.PhotoList.remove(0);
         this.Score = this.CalculateScore(this.PhotoList);
+    }
+
+    public void PostProcessSlideShow(List<Photo> SlideShow){
+        this.PhotoList.add(SlideShow.get(0));
+        SlideShow.remove(0);
+
+        while(SlideShow.size()>0) {
+            int tmp_value = 0;
+            int tmp_position = 0;
+            for (int i = 0; i < SlideShow.size(); i++) {
+                int score = Helper.calculateScoring(this.PhotoList.get(PhotoList.size() - 1), SlideShow.get(i));
+                if (score >= this.tmp_value) {
+                    this.PhotoList.add(SlideShow.get(i));
+                    SlideShow.remove(i);
+                    continue;
+                }
+                if (score >= tmp_value) {
+                    tmp_value = score;
+                    tmp_position = i;
+                }
+            }
+            this.PhotoList.add(SlideShow.get(tmp_position));
+            SlideShow.remove(tmp_position);
+        }
     }
 
     public int SwapOperator(SlideShow ActualSolution,int x, int y){
@@ -232,11 +254,11 @@ public class SlideShow {
             int x = random.nextInt(this.PhotoList.size()-1);
             int y = random.nextInt(this.PhotoList.size()-1);
 
-//            if (i % 2 == 0){
                 int tmpSolutionScore = this.SwapOperator(this,x,y);
                 if(!TabuClass.isElementInTabuList(this.PhotoList.get(x))){
                     if(tmpSolutionScore >= 0){
                         this.Score = this.Score + tmpSolutionScore;
+                        System.out.println("Score: " + this.Score);
                         Photo tmpPhotox = new Photo();
                         tmpPhotox.Set(this.PhotoList.get(x));
                         this.PhotoList.get(x).Set(this.PhotoList.get(y));
@@ -244,7 +266,8 @@ public class SlideShow {
                         int toGetTabu = random.nextInt(10);
                         TabuClass.insertElementInTabuList(this.PhotoList.get(x));
                     }
-                }else{
+                }
+                else{
                     int n = random.nextInt(10);
                     if(n == 1){
                         if(tmpSolutionScore >= 0){
@@ -258,32 +281,6 @@ public class SlideShow {
                         }
                     }
                 }
-
-//            }
-
-//            else if (i % 100 == 1){
-//                SlideShow tmpSolution3 = new SlideShow();
-//                tmpSolution3 = this.RemoveOperator(this, x);
-//                if (tmpSolution3.Score >= this.Score) {
-//                    System.out.println("Score: " + tmpSolution3.Score);
-//                    if (!TabuClass.isElementInTabuList(this.PhotoList.get(x))) {
-//                        this.SetActualSolution(tmpSolution3);
-//                        TabuClass.insertElementInTabuList(this.PhotoList.get(x));
-//                    }
-//                }
-//            }
-
-//            else {
-//                SlideShow tmpSolution2 = new SlideShow();
-//                tmpSolution2 = this.MoveOperator(this, x, y);
-//                if (tmpSolution2.Score >= this.Score) {
-//                    System.out.println("Score: " + tmpSolution2.Score);
-//                    if (!TabuClass.isElementInTabuList(this.PhotoList.get(x))) {
-//                        this.SetActualSolution(tmpSolution2);
-//                        TabuClass.insertElementInTabuList(this.PhotoList.get(x));
-//                    }
-//                }
-//            }
         }
 
     }

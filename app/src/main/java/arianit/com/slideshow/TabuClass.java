@@ -12,7 +12,7 @@ public class TabuClass {
     }
 
     public static void insertElementInTabuList(Photo photo){
-        if(TabuList.size() >= 20){
+        if(TabuList.size() >= 100){
             TabuList.remove(0);
         }
         TabuList.add(photo.id);

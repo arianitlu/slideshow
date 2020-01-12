@@ -146,6 +146,6 @@ public class Helper {
 class CustomComperator implements Comparator<Photo>{
         @Override
         public int compare(Photo photo, Photo t1) {
-            return  photo.numberOfTags - t1.numberOfTags;
+            return photo.numberOfTags - t1.numberOfTags;
         }
 }

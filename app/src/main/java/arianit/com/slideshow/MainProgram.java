@@ -19,29 +19,32 @@ public class MainProgram {
 
     public static void main(String[] args) throws IOException {
 
-        SlideShow slideShow = new SlideShow(PATH_C,8);
 
         System.out.println("----------------------------");
         System.out.println("StartTime: " + time());
-        System.out.println("StartScore: " + slideShow.Score);
 
-        slideShow.TabuSearchAlgorithm(2000000);
-
+        SlideShow slideShow = new SlideShow(PATH_C);
         System.out.println("----------------------------");
-        System.out.println("BestScore: " + slideShow.Score);
+        System.out.println("InitialSolutionTime: " + time());
+        System.out.println("StartScore: " + slideShow.Score);
+        slideShow.TabuSearchAlgorithm(300000);
+        System.out.println("----------------------------");
         System.out.println("EndTime: " + time());
-//        Output(slideShow);
+        System.out.println("BestScore: " + slideShow.Score);
+        System.out.println("----------------------------");
+
+        //Output(slideShow);
 
     }
 
     public static void Output(SlideShow slideShow){
         try {
-            IO.writeToFile(PATH_C_OUTPUT, slideShow.PhotoList);
+            IO.writeToFile(PATH_E_OUTPUT, slideShow.PhotoList);
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("Output file successfully created");
-        System.out.println("Initial fitness: " + slideShow.Score);
+        System.out.println("Best fitness: " + slideShow.Score);
     }
 
     public static String time(){

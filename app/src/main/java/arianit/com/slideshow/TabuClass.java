@@ -3,16 +3,14 @@ package arianit.com.slideshow;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabuClass {
-    public static List<String> TabuList = new ArrayList<String>();
-    public static int Time = 0;
+import static arianit.com.slideshow.Settings.TABU_LIST_SIZE;
 
-    public static void resetTabuList(){
-        TabuList = new ArrayList<>();
-    }
+public class TabuClass {
+
+    public static List<String> TabuList = new ArrayList<String>();
 
     public static void insertElementInTabuList(Photo photo){
-        if(TabuList.size() >= 100){
+        if(TabuList.size() >= TABU_LIST_SIZE){
             TabuList.remove(0);
         }
         TabuList.add(photo.id);

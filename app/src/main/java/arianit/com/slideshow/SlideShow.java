@@ -1,14 +1,13 @@
 package arianit.com.slideshow;
-import android.transition.Slide;
 
-import static arianit.com.slideshow.Paths.PATH_B;
-import static arianit.com.slideshow.Paths.PATH_B_OUTPUT;
-import static arianit.com.slideshow.Paths.PATH_C;
-import static arianit.com.slideshow.Paths.PATH_C_OUTPUT;
-import static arianit.com.slideshow.Paths.PATH_D;
-import static arianit.com.slideshow.Paths.PATH_D_OUTPUT;
-import static arianit.com.slideshow.Paths.PATH_E;
-import static arianit.com.slideshow.Paths.PATH_E_OUTPUT;
+import static arianit.com.slideshow.Settings.PATH_B;
+import static arianit.com.slideshow.Settings.PATH_B_MAXSCORE;
+import static arianit.com.slideshow.Settings.PATH_C;
+import static arianit.com.slideshow.Settings.PATH_C_MAXSCORE;
+import static arianit.com.slideshow.Settings.PATH_D;
+import static arianit.com.slideshow.Settings.PATH_D_MAXSCORE;
+import static arianit.com.slideshow.Settings.PATH_E_MAXSCORE;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,20 +25,20 @@ public class SlideShow {
     }
     public SlideShow(String _path) throws IOException{
         this.Path = _path;
-        //this.set_tmp_value(_path);
-        //this.InitiateSolutionAdvanced();
-        this.InitiateSolution();
+        this.set_tmp_value(_path);
+        this.InitiateSolutionAdvanced();
+        //this.InitiateSolution();
     }
 
     private void set_tmp_value(String path){
         if(path.equals(PATH_B))
-            this.tmp_value = 1;
+            this.tmp_value = PATH_B_MAXSCORE;
         else if(path.equals(PATH_C))
-            this.tmp_value = 10;
+            this.tmp_value = PATH_C_MAXSCORE;
         else if(path.equals(PATH_D))
-            this.tmp_value = 6;
+            this.tmp_value = PATH_D_MAXSCORE;
         else
-            this.tmp_value = 8;
+            this.tmp_value = PATH_E_MAXSCORE;
     }
 
     private void InitiateSolution() throws IOException {
@@ -106,7 +105,7 @@ public class SlideShow {
 
         this.PostProcessSlideShow(listOfHorizontalPhotos);
 
-        this.PhotoList.remove(0);
+        //this.PhotoList.remove(0);
         this.Score = this.CalculateScore(this.PhotoList);
     }
 
@@ -115,22 +114,23 @@ public class SlideShow {
         SlideShow.remove(0);
 
         while(SlideShow.size()>0) {
-            int tmp_value = 0;
-            int tmp_position = 0;
-            for (int i = 0; i < SlideShow.size(); i++) {
-                int score = Helper.calculateScoring(this.PhotoList.get(PhotoList.size() - 1), SlideShow.get(i));
-                if (score >= this.tmp_value) {
-                    this.PhotoList.add(SlideShow.get(i));
-                    SlideShow.remove(i);
-                    continue;
+             int temporary_value = 0;
+             int temporary_position = 0;
+                for (int i = 0; i < SlideShow.size(); i++) {
+                    int score = Helper.calculateScoring(this.PhotoList.get(PhotoList.size() - 1), SlideShow.get(i));
+                    if (score >= this.tmp_value) {
+                        this.PhotoList.add(SlideShow.get(i));
+                        SlideShow.remove(i);
+                        continue;
+                    }
+                    if (score >= temporary_value) {
+                        temporary_value = score;
+                        temporary_position = i;
+                    }
                 }
-                if (score >= tmp_value) {
-                    tmp_value = score;
-                    tmp_position = i;
-                }
-            }
-            this.PhotoList.add(SlideShow.get(tmp_position));
-            SlideShow.remove(tmp_position);
+                this.PhotoList.add(SlideShow.get(temporary_position));
+                SlideShow.remove(temporary_position);
+
         }
     }
 
@@ -182,7 +182,6 @@ public class SlideShow {
         Photo photox_0;
         if(x==0){
             photox_0 = null;
-
         }else{
             photox_0 = photoList.get(x-1);
         }
@@ -258,12 +257,11 @@ public class SlideShow {
                 if(!TabuClass.isElementInTabuList(this.PhotoList.get(x))){
                     if(tmpSolutionScore >= 0){
                         this.Score = this.Score + tmpSolutionScore;
-                        System.out.println("Score: " + this.Score);
+//                        System.out.println("Score: " + this.Score);
                         Photo tmpPhotox = new Photo();
                         tmpPhotox.Set(this.PhotoList.get(x));
                         this.PhotoList.get(x).Set(this.PhotoList.get(y));
                         this.PhotoList.get(y).Set(tmpPhotox);
-                        int toGetTabu = random.nextInt(10);
                         TabuClass.insertElementInTabuList(this.PhotoList.get(x));
                     }
                 }
@@ -276,8 +274,6 @@ public class SlideShow {
                             tmpPhotox.Set(this.PhotoList.get(x));
                             this.PhotoList.get(x).Set(this.PhotoList.get(y));
                             this.PhotoList.get(y).Set(tmpPhotox);
-                            int toGetTabu = random.nextInt(10);
-                            TabuClass.insertElementInTabuList(this.PhotoList.get(x));
                         }
                     }
                 }

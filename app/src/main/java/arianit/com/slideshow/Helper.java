@@ -94,7 +94,6 @@ public class Helper {
             return new ArrayList<>();
         }
 
-
         List<Photo> listOfPhotos = new ArrayList<>();
         int ActualScore = 0;
         int Tmp = 99;
@@ -118,25 +117,13 @@ public class Helper {
                         BestPosition = j;
                     }
                 }
-                if(j == i-1){
+                if(i == j-1){ // ***
                     vertical.get(i).gone = true;
                     vertical.get(j).gone = true;
                     listOfPhotos.add(combineTwoPhotos( vertical.get(i), vertical.get(BestPosition)));
                 }
             }
         }
-
-       /* Photo current = vertical.get(0);
-
-        for(int i=1; i<vertical.size(); i=i+2) {
-            listOfPhotos.add(combineTwoPhotos(current, vertical.get(i)));
-
-            if(i+1 <= vertical.size()-2) {
-                current = vertical.get(i+1);
-            } else {
-                break;
-            }
-        }*/
 
         return listOfPhotos;
     }

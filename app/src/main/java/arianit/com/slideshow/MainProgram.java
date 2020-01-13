@@ -24,7 +24,7 @@ public class MainProgram {
         System.out.println("----------------------------");
         System.out.println("InitialSolutionTime: " + time());
         System.out.println("StartScore: " + slideShow1.Score);
-        slideShow1.TabuSearchAlgorithm(15000000);
+        slideShow1.TabuSearchAlgorithm(50000000);
         System.out.println("----------------------------");
         System.out.println("EndTime: " + time());
         System.out.println("BestScore: " + slideShow1.Score);

@@ -16,19 +16,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/b_example_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/c_example_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/d_example_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/e_shiny_selfies_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/d_example_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/d_example_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/TabuClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/TabuClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +51,7 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#time#0;class#MainProgram#0" />
-                <marker date="1578910029121" expanded="true" signature="746:1296" ph="..." />
+                <marker date="1578911169015" expanded="true" signature="746:1296" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            <state relative-caret-position="212">
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#InitiateSolution#0;class#SlideShow#0" />
@@ -88,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="164">
               <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="161">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -161,9 +154,9 @@
         <option value="$PROJECT_DIR$/app/src/main/assets/e_shiny_selfies_output.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/TabuClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java" />
       </list>
     </option>
   </component>
@@ -462,12 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578846308270</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Final Version 2.0">
+      <created>1578910060771</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578910060771</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23990306" />
@@ -526,7 +525,8 @@
     <MESSAGE value="Added TabuSearchAlgorithm" />
     <MESSAGE value="Time of execution" />
     <MESSAGE value="Final version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
+    <MESSAGE value="Final Version 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Version 2.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainActivity.java" />
@@ -689,16 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/d_example_output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -713,17 +703,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="164">
+          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/SlideShow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        <state relative-caret-position="212">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#InitiateSolution#0;class#SlideShow#0" />
@@ -739,6 +732,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/arianit/com/slideshow/MainProgram.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -746,7 +746,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#time#0;class#MainProgram#0" />
-            <marker date="1578910029121" expanded="true" signature="746:1296" ph="..." />
+            <marker date="1578911169015" expanded="true" signature="746:1296" ph="..." />
           </folding>
         </state>
       </provider>

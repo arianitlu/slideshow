@@ -20,7 +20,7 @@ public class Settings {
 
     public static int PATH_B_MAXSCORE = 1;
     public static int PATH_C_MAXSCORE = 10;
-    public static int PATH_D_MAXSCORE = 8;
+    public static int PATH_D_MAXSCORE = 12;
     public static int PATH_E_MAXSCORE = 10;
 
 
